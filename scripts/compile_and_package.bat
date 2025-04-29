@@ -1,9 +1,16 @@
 @echo on
+
+cd ..
 if not exist build mkdir build
+
 echo --- Compiling Java Code ---
-javac -d build src\*.java
+
+REM Compile main Java classes
+javac -d build src\LinkedList\LinkedList.java src\Node\Node.java
 
 echo --- Creating JAR File ---
 cd build
 jar cvf app.jar *
 cd ..
+
+pause
