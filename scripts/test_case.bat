@@ -1,14 +1,27 @@
 @echo on
 echo --- Running JUnit 5 Tests ---
 
-:: Create required folders
+:: Create required folders if they don't exist
 if not exist build mkdir build
 if not exist reports mkdir reports
 
-:: Compile Java classes
-javac -cp .;libs\junit-platform-console-standalone-1.10.2.jar -d build src\test\java\LinkedListTest.java
+:: Move to the root directory of the project
+  
 
-:: Run Tests
-java -jar libs\junit-platform-console-standalone-1.10.2.jar --class-path build --scan-class-path > reports\test_report.txt
+:: Ensure the JUnit JAR file is in the correct location or update the path
+if not exist libs\junit-platform-console-standalone-1.13.0.jar (
+    echo JUnit JAR file not found. Please ensure it's in the 'libs' directory.
+    pause
+    exit /b
+)
+
+:: Compile Java classes including main and test classes
+echo --- Compiling Java Classes ---
+javac -cp .;libs\junit-platform-console-standalone-1.13.0.jar -d build src\LinkedList\LinkedList.java src\Node\Node.java src\test\java\LinkedListTest.java
+
+:: Run Tests using JUnit Platform Console
+echo --- Running JUnit 5 Tests ---
+java -jar libs\junit-platform-console-standalone-1.13.0.jar --class-path build --scan-class-path > reports\test_report.txt
 
 echo --- JUnit 5 Testing Complete ---
+
