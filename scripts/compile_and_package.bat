@@ -12,4 +12,3 @@ cd build
 jar cvf app.jar *
 cd ..
 
-pause
