@@ -25,3 +25,4 @@ java -jar libs\junit-platform-console-standalone-1.13.0.jar --class-path build -
 
 echo --- JUnit 5 Testing Complete ---
 
+pause
