@@ -21,7 +21,7 @@ javac -cp .;libs\junit-platform-console-standalone-1.13.0.jar -d build src\Linke
 
 :: Run Tests using JUnit Platform Console
 echo --- Running JUnit 5 Tests ---
-java -jar libs\junit-platform-console-standalone-1.13.0.jar --class-path build --scan-class-path > reports\test_report.txt
+java -jar libs\junit-platform-console-standalone-1.13.0.jar --class-path build --scan-class-path > reports\test_report.xml
 
 echo --- JUnit 5 Testing Complete ---
 
