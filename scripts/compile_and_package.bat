@@ -1,6 +1,5 @@
 @echo on
 
-cd ..
 if not exist build mkdir build
 
 echo --- Compiling Java Code ---
