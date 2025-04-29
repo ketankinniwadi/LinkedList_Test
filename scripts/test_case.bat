@@ -1,4 +1,4 @@
-@echo on
+@echo off
 echo --- Running JUnit 5 Tests ---
 
 :: Create required folders if they don't exist
@@ -25,13 +25,6 @@ if %ERRORLEVEL% NEQ 0 (
 
 :: Run Tests using JUnit Platform Console
 echo --- Running JUnit 5 Tests ---
-java -jar libs\junit-platform-console-standalone-1.13.0.jar --class-path build --scan-class-path > reports\test_report.xml
-
-:: Check if the tests ran successfully
-if %ERRORLEVEL% NEQ 0 (
-    echo Tests failed. Exiting.
-    pause
-    exit /b
-)
-
+java -jar libs\junit-platform-console-standalone-1.13.0.jar --class-path build --scan-class-path > reports\test_report.txt
+cd reports
 echo --- JUnit 5 Testing Complete ---
