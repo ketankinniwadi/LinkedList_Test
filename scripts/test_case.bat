@@ -1,4 +1,4 @@
-@echo off
+@echo on
 echo --- Running JUnit 5 Tests ---
 
 :: Create required folders if they don't exist
